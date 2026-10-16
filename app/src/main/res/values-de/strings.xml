@@ -1,0 +1,67 @@
+<resources>
+    <!-- Start page -->
+    <plurals name="steps_label">
+        <item quantity="one">Schritt</item>
+        <item quantity="other">Schritte</item>
+    </plurals>
+    <string name="goal_label">Ziel %1$s</string>
+    <string name="goal_progress">%1$d %% deines Tagesziels</string>
+    <string name="goal_reached">Tagesziel erreicht!</string>
+    <string name="tap_to_start">Tippen zum Starten</string>
+    <string name="tap_to_start_detail">der Schrittzählung</string>
+    <string name="permission_needed">StepLord benötigt Zugriff auf körperliche Aktivitäten, um Schritte zu zählen.</string>
+    <string name="permission_denied">Der Zugriff auf körperliche Aktivitäten ist deaktiviert. Tippe auf den Kreis, um die Einstellungen zu öffnen.</string>
+    <string name="no_step_sensor">Dieses Gerät hat keinen Schrittzähler-Sensor.</string>
+    <string name="chart_week">Woche</string>
+    <string name="chart_month">Monat</string>
+    <string name="previous_period">Vorheriger Zeitraum</string>
+    <string name="next_period">Nächster Zeitraum</string>
+    <string name="period_summary">Gesamt %1$s · Ø %2$s pro Tag</string>
+    <string name="edit_goal">Tagesziel ändern</string>
+    <string name="add_sample_data">Beispieldaten hinzufügen</string>
+    <string name="open_settings">Einstellungen</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="navigate_back">Zurück</string>
+    <string name="settings_section_goal">Ziel</string>
+    <string name="settings_daily_goal">Tagesziel</string>
+    <string name="settings_daily_goal_value">%1$s Schritte</string>
+    <string name="settings_daily_goal_invalid">Gib ein Ziel zwischen %1$s und %2$s Schritten ein</string>
+    <string name="settings_section_profile">Profil</string>
+    <string name="settings_height">Körpergröße</string>
+    <string name="settings_height_invalid">Gib eine Größe zwischen %1$s und %2$s ein</string>
+    <string name="settings_units">Einheiten</string>
+    <string name="settings_units_metric">Metrisch (km, cm)</string>
+    <string name="settings_units_imperial">Imperial (mi, ft)</string>
+    <string name="settings_section_notifications">Benachrichtigungen</string>
+    <string name="settings_summary">Tägliche Zusammenfassung</string>
+    <string name="settings_summary_description">Zeigt einmal täglich deine heutigen Schritte</string>
+    <string name="settings_summary_time">Uhrzeit</string>
+    <string name="settings_goal_notification">Ziel erreicht</string>
+    <string name="settings_goal_notification_description">Benachrichtigt dich, wenn du dein Tagesziel erreichst</string>
+    <string name="settings_notifications_blocked">Benachrichtigungen für StepLord sind deaktiviert</string>
+    <string name="settings_allow_notifications">Zulassen</string>
+    <string name="settings_section_general">Allgemein</string>
+    <string name="settings_language">Sprache</string>
+    <string name="settings_language_system">Systemstandard</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+
+    <!-- Notifications -->
+    <string name="channel_daily_summary">Tägliche Zusammenfassung</string>
+    <string name="channel_daily_summary_description">Deine heutigen Schritte, einmal täglich zur gewählten Uhrzeit</string>
+    <string name="channel_goal_reached">Ziel erreicht</string>
+    <string name="channel_goal_reached_description">Wenn du dein tägliches Schrittziel erreichst</string>
+    <plurals name="notification_summary_title">
+        <item quantity="one">%1$s Schritt heute</item>
+        <item quantity="other">%1$s Schritte heute</item>
+    </plurals>
+    <string name="notification_summary_text">%1$d %% deines Tagesziels von %2$s</string>
+    <string name="notification_summary_text_reached">Tagesziel von %1$s erreicht</string>
+    <string name="notification_goal_title">Ziel erreicht!</string>
+    <plurals name="notification_goal_text">
+        <item quantity="one">Du bist heute %1$s Schritt gegangen</item>
+        <item quantity="other">Du bist heute %1$s Schritte gegangen</item>
+    </plurals>
+</resources>

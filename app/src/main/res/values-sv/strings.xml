@@ -1,0 +1,67 @@
+<resources>
+    <!-- Start page -->
+    <plurals name="steps_label">
+        <item quantity="one">steg</item>
+        <item quantity="other">steg</item>
+    </plurals>
+    <string name="goal_label">Mål %1$s</string>
+    <string name="goal_progress">%1$d %% av ditt dagliga mål</string>
+    <string name="goal_reached">Dagsmålet uppnått!</string>
+    <string name="tap_to_start">Tryck för att börja</string>
+    <string name="tap_to_start_detail">räkna steg</string>
+    <string name="permission_needed">StepLord behöver åtkomst till fysisk aktivitet för att räkna steg.</string>
+    <string name="permission_denied">Åtkomst till fysisk aktivitet är avstängd. Tryck på cirkeln för att öppna inställningarna.</string>
+    <string name="no_step_sensor">Den här enheten saknar stegräknarsensor.</string>
+    <string name="chart_week">Vecka</string>
+    <string name="chart_month">Månad</string>
+    <string name="previous_period">Föregående period</string>
+    <string name="next_period">Nästa period</string>
+    <string name="period_summary">Totalt %1$s · Snitt %2$s per dag</string>
+    <string name="edit_goal">Ändra dagligt mål</string>
+    <string name="add_sample_data">Lägg till exempeldata</string>
+    <string name="open_settings">Inställningar</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Inställningar</string>
+    <string name="navigate_back">Tillbaka</string>
+    <string name="settings_section_goal">Mål</string>
+    <string name="settings_daily_goal">Dagligt mål</string>
+    <string name="settings_daily_goal_value">%1$s steg</string>
+    <string name="settings_daily_goal_invalid">Ange ett mål mellan %1$s och %2$s steg</string>
+    <string name="settings_section_profile">Profil</string>
+    <string name="settings_height">Längd</string>
+    <string name="settings_height_invalid">Ange en längd mellan %1$s och %2$s</string>
+    <string name="settings_units">Enheter</string>
+    <string name="settings_units_metric">Metriska (km, cm)</string>
+    <string name="settings_units_imperial">Brittiska (mi, ft)</string>
+    <string name="settings_section_notifications">Aviseringar</string>
+    <string name="settings_summary">Daglig sammanfattning</string>
+    <string name="settings_summary_description">Visar dagens steg en gång om dagen</string>
+    <string name="settings_summary_time">Tid</string>
+    <string name="settings_goal_notification">Mål uppnått</string>
+    <string name="settings_goal_notification_description">Meddelar dig när du når ditt dagliga mål</string>
+    <string name="settings_notifications_blocked">Aviseringar för StepLord är avstängda</string>
+    <string name="settings_allow_notifications">Tillåt</string>
+    <string name="settings_section_general">Allmänt</string>
+    <string name="settings_language">Språk</string>
+    <string name="settings_language_system">Systemets standardspråk</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Avbryt</string>
+
+    <!-- Notifications -->
+    <string name="channel_daily_summary">Daglig sammanfattning</string>
+    <string name="channel_daily_summary_description">Dagens steg, en gång om dagen vid den tid du väljer</string>
+    <string name="channel_goal_reached">Mål uppnått</string>
+    <string name="channel_goal_reached_description">När du når ditt dagliga stegmål</string>
+    <plurals name="notification_summary_title">
+        <item quantity="one">%1$s steg i dag</item>
+        <item quantity="other">%1$s steg i dag</item>
+    </plurals>
+    <string name="notification_summary_text">%1$d %% av ditt dagliga mål på %2$s</string>
+    <string name="notification_summary_text_reached">Dagligt mål på %1$s uppnått</string>
+    <string name="notification_goal_title">Målet uppnått!</string>
+    <plurals name="notification_goal_text">
+        <item quantity="one">Du har gått %1$s steg i dag</item>
+        <item quantity="other">Du har gått %1$s steg i dag</item>
+    </plurals>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Auto Backup on Android 11 and lower (API 30 and below). Same content as
+   data_extraction_rules.xml: only the app database (step history and user settings).
+   See https://developer.android.com/guide/topics/data/autobackup
+-->
+<full-backup-content>
+    <include domain="database" path="." />
+</full-backup-content>

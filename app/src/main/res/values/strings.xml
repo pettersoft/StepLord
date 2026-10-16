@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name" translatable="false">StepLord</string>
+
+    <!-- Start page -->
+    <plurals name="steps_label">
+        <item quantity="one">step</item>
+        <item quantity="other">steps</item>
+    </plurals>
+    <!-- Approximate distance and walking time inside the step circle, e.g. "≈ 5.7 km · 1 hr, 16 min" -->
+    <string name="walking_estimate" translatable="false">≈ %1$s · %2$s</string>
+    <!-- Unit abbreviations used as input field suffixes -->
+    <string name="unit_cm" translatable="false">cm</string>
+    <string name="unit_ft" translatable="false">ft</string>
+    <string name="unit_in" translatable="false">in</string>
+    <string name="goal_label">Goal %1$s</string>
+    <string name="goal_progress">%1$d%% of your daily goal</string>
+    <string name="goal_reached">Daily goal reached!</string>
+    <string name="tap_to_start">Tap to start</string>
+    <string name="tap_to_start_detail">counting steps</string>
+    <string name="permission_needed">StepLord needs access to physical activity to count steps.</string>
+    <string name="permission_denied">Physical activity access is turned off. Tap the circle to open settings.</string>
+    <string name="no_step_sensor">This device has no step counter sensor.</string>
+    <string name="chart_week">Week</string>
+    <string name="chart_month">Month</string>
+    <string name="previous_period">Previous period</string>
+    <string name="next_period">Next period</string>
+    <string name="period_summary">Total %1$s · Average %2$s per day</string>
+    <string name="edit_goal">Change daily goal</string>
+    <string name="add_sample_data">Add sample data</string>
+    <string name="open_settings">Settings</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="navigate_back">Back</string>
+    <string name="settings_section_goal">Goal</string>
+    <string name="settings_daily_goal">Daily goal</string>
+    <string name="settings_daily_goal_value">%1$s steps</string>
+    <string name="settings_daily_goal_invalid">Enter a goal between %1$s and %2$s steps</string>
+    <string name="settings_section_profile">Profile</string>
+    <string name="settings_height">Height</string>
+    <string name="settings_height_invalid">Enter a height between %1$s and %2$s</string>
+    <string name="settings_units">Units</string>
+    <string name="settings_units_metric">Metric (km, cm)</string>
+    <string name="settings_units_imperial">Imperial (mi, ft)</string>
+    <string name="settings_section_notifications">Notifications</string>
+    <string name="settings_summary">Daily summary</string>
+    <string name="settings_summary_description">Shows today\'s steps once a day</string>
+    <string name="settings_summary_time">Time</string>
+    <string name="settings_goal_notification">Goal reached</string>
+    <string name="settings_goal_notification_description">Tells you when you reach your daily goal</string>
+    <string name="settings_notifications_blocked">Notifications are turned off for StepLord</string>
+    <string name="settings_allow_notifications">Allow</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">System default</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Notifications -->
+    <string name="channel_daily_summary">Daily summary</string>
+    <string name="channel_daily_summary_description">Today\'s steps, once a day at the time you choose</string>
+    <string name="channel_goal_reached">Goal reached</string>
+    <string name="channel_goal_reached_description">When you reach your daily step goal</string>
+    <plurals name="notification_summary_title">
+        <item quantity="one">%1$s step today</item>
+        <item quantity="other">%1$s steps today</item>
+    </plurals>
+    <string name="notification_summary_text">%1$d%% of your daily goal of %2$s</string>
+    <string name="notification_summary_text_reached">Daily goal of %1$s reached</string>
+    <string name="notification_goal_title">Goal reached!</string>
+    <plurals name="notification_goal_text">
+        <item quantity="one">You\'ve walked %1$s step today</item>
+        <item quantity="other">You\'ve walked %1$s steps today</item>
+    </plurals>
+</resources>

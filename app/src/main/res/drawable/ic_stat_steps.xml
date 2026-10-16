@@ -1,0 +1,10 @@
+<!-- Two footprints; monochrome as required for status bar icons -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M4.7,8a2.8,4 0 1,0 5.6,0a2.8,4 0 1,0 -5.6,0z M5.3,15.5a2.2,2.5 0 1,0 4.4,0a2.2,2.5 0 1,0 -4.4,0z M13.7,11a2.8,4 0 1,0 5.6,0a2.8,4 0 1,0 -5.6,0z M14.3,18.5a2.2,2.5 0 1,0 4.4,0a2.2,2.5 0 1,0 -4.4,0z" />
+</vector>
