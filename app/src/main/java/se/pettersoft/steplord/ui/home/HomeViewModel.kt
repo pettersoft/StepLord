@@ -30,6 +30,7 @@ import javax.inject.Inject
 import kotlin.random.Random
 
 private const val SAMPLE_DAYS = 60L
+private const val SAMPLE_TODAY_STEPS = 7_559
 
 data class ChartUiState(
     val period: ChartPeriod = ChartPeriod.WEEK,
@@ -126,11 +127,13 @@ class HomeViewModel @Inject constructor(
     /** Counts steps until cancelled; the screen runs this while it is visible. */
     suspend fun trackSteps() = repository.trackSteps()
 
-    // Debug builds only, for trying the UI without walking around
+    // Debug builds only, for trying the UI without walking around. Today gets a fixed count
+    // part-way to the default goal, so screenshots show a partly filled ring.
     fun seedSampleData() {
         viewModelScope.launch {
             val today = LocalDate.now()
-            for (offset in 0 until SAMPLE_DAYS) {
+            repository.setSteps(today, SAMPLE_TODAY_STEPS)
+            for (offset in 1 until SAMPLE_DAYS) {
                 repository.setSteps(today.minusDays(offset), Random.nextInt(2_000, 15_000))
             }
         }

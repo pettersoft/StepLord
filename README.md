@@ -1,13 +1,43 @@
 # StepLord
 
-StepLord is a simple Android step counter. It shows how many steps you have taken today, how close you are to your daily goal, and how the past week went. It reminds you of your progress every evening and tells you when you reach your goal.
+StepLord is a simple Android step counter. It shows how many steps you have taken today, how close you are to your daily goal, and how the past week and month went. It reminds you of your progress every evening and tells you when you reach your goal.
 
-All data stays on the device. There is no account, no cloud sync and no tracking.
+All data stays on the device. There is no account, no cloud sync, no ads and no tracking.
+
+<p align="center">
+  <img src="docs/screenshots/home-week.png" alt="Start page with today's steps and the week chart" width="260">
+  &nbsp;
+  <img src="docs/screenshots/home-month.png" alt="Start page with the month chart" width="260">
+  &nbsp;
+  <img src="docs/screenshots/settings.png" alt="Settings" width="260">
+</p>
+
+## At a glance
+
+| | |
+|---|---|
+| Platform | Android phones, 8.0 (Oreo, API 26) or later |
+| Version | 1.0 |
+| Languages | English, Swedish, German, Spanish |
+| Account / internet | Not needed. The app has no internet permission |
+| Battery | No foreground service or permanent notification. Background counting is handled by Google Play services |
+| Source | Kotlin and Jetpack Compose (see [Tech stack](#tech-stack)) |
+
+## Getting started
+
+StepLord isn't on Google Play yet. To try it, build it from source:
+
+1. Install [Android Studio](https://developer.android.com/studio) (it includes the JDK and Android SDK).
+2. Clone the repository and open the folder in Android Studio.
+3. Connect a phone with USB debugging turned on, or start an emulator, and press **Run**.
+4. Tap the circle on the start page and allow *Physical activity*. On Android 13+ the app then asks for *Notifications*, which are optional.
+
+See [Building and testing](#building-and-testing) for command-line builds and tests.
 
 ## Features
 
 - **Today's steps** in a large circle on the start page, with a ring showing progress towards the daily goal. Tap the circle to change the goal.
-- **Approximate distance and walking time** in the circle, e.g. "≈ 5.7 km · 1 hr, 16 min".
+- **Approximate distance and walking time** in the circle, e.g. "≈ 5.5 km · 1 hr, 16 min".
   - Distance = steps × stride, where stride ≈ 0.415 × height (from *Settings → Profile*, default 175 cm).
   - Time assumes about 100 steps per minute.
   - Units (metric or imperial) are chosen in Settings. Unit names and number formats come from Android's ICU formatter, so they follow the app language.
@@ -16,9 +46,9 @@ All data stays on the device. There is no account, no cloud sync and no tracking
   - Use the arrows to move between periods. ← is available when older steps exist, and → up to the current period.
   - Weeks start on the locale's first day of the week (Monday in Sweden and Germany, Sunday in the US).
 - **Counts in the background** without a permanent notification, using Google Play services' Recording API (see [How step counting works](#how-step-counting-works)).
-- **Daily summary notification** at a time you choose (default 21:00), shown as a banner at the top of the screen: *"7,559 steps today, 76% of your daily goal of 10,000"*.
+- **Daily summary notification** at a time you choose (default 21:00), shown as a banner at the top of the screen: *"7,559 steps today, 75% of your daily goal of 10,000"*.
 - **Goal reached notification**, at most once per day.
-- **Settings:** daily goal, summary on/off and time, goal notification on/off, and app language.
+- **Settings:** daily goal, height and units (metric or imperial), summary on/off and time, goal notification on/off, and app language.
 - **Light and dark mode** following the system setting, with a blue look in both.
 - **Portrait only on phones.** Android 16+ ignores orientation locks on large screens (tablets, foldables), so the layout still keeps the circle at a sensible size there.
 - **Backup:** step history and settings are included in Android's backup and device transfer, so they follow the user to a new phone.
@@ -29,9 +59,10 @@ All data stays on the device. There is no account, no cloud sync and no tracking
 | | |
 |---|---|
 | Android | 8.0 (API 26) or later. Targets API 37 |
-| Hardware | A step counter sensor (most phones have one) |
+| Devices | Phones, in portrait. Also runs on tablets and foldables, in any orientation on Android 16+ |
+| Hardware | A step counter sensor (most phones have one). The app still installs without one, but can't count steps |
 | Background counting | Google Play services. Without it, steps are only counted while the app is open |
-| Permissions | *Physical activity* (to count steps) and *Notifications* (Android 13+). Both are asked for in the app |
+| Permissions | *Physical activity* (asked for in the app on Android 10+, granted at install on 8–9) and *Notifications* (asked for on Android 13+, optional) |
 
 ## How step counting works
 
@@ -178,7 +209,16 @@ Open the project in Android Studio, or build from a terminal. Gradle needs a JDK
 
 Note that `connectedDebugAndroidTest` uninstalls the app when it finishes.
 
-**Debug builds** have an *Add sample data* button on the start page, which fills the last week with random step counts. It is useful on emulators, which usually have no step sensor.
+**Debug builds** have an *Add sample data* button at the bottom of the start page. It sets today to 7,559 steps and fills the previous 59 days with random counts. This is useful on emulators, which usually have no step sensor: with sample data, the start page shows the normal progress text instead of the missing-sensor message.
+
+**Screenshots** in [`docs/screenshots/`](docs/screenshots) were taken on an emulator with sample data, with the status bar in demo mode for a clean clock and icons:
+
+```sh
+adb shell settings put global sysui_demo_allowed 1
+adb shell am broadcast -a com.android.systemui.demo -e command enter
+adb shell am broadcast -a com.android.systemui.demo -e command clock -e hhmm 1200
+adb shell am broadcast -a com.android.systemui.demo -e command exit   # back to normal
+```
 
 **Backup:** [`data_extraction_rules.xml`](app/src/main/res/xml/data_extraction_rules.xml) (Android 12+) and [`backup_rules.xml`](app/src/main/res/xml/backup_rules.xml) (older versions) include only the app database. WorkManager keeps its own database in storage that isn't backed up, and alarms and background work are recreated at app start. To test a backup and restore on an emulator:
 

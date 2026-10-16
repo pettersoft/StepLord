@@ -117,7 +117,9 @@ fun HomeScreen(
         uiState = uiState,
         showSteps = showSteps,
         message = when {
-            !viewModel.hasStepSensor -> stringResource(R.string.no_step_sensor)
+            // Debug builds with sample data show the normal progress text, e.g. on an emulator without a sensor
+            !viewModel.hasStepSensor && !(BuildConfig.DEBUG && uiState.todaySteps > 0) ->
+                stringResource(R.string.no_step_sensor)
             permissionDenied -> stringResource(R.string.permission_denied)
             !hasPermission -> stringResource(R.string.permission_needed)
             uiState.progress >= 1f -> stringResource(R.string.goal_reached)
